@@ -1,12 +1,53 @@
 <template>
     <div class="gvb_admin">
         <aside>
-            <div>
-                <i class="iconfont icon-yonghu"></i>
-            </div>
         </aside>
         <div class="main">
-            <header></header>
+            <header>
+                <div class="left">
+                    <a-breadcrumb>
+                        <a-breadcrumb-item>首页</a-breadcrumb-item>
+                        <a-breadcrumb-item><a href="#">个人中心</a></a-breadcrumb-item>
+                        <a-breadcrumb-item>用户列表</a-breadcrumb-item>
+                    </a-breadcrumb>
+                </div>
+                <div class="right">
+                    <div class="icon_actions">
+                        <i class="fa fa-home"></i>
+                        <i class="fa fa-moon-o"></i>
+                        <i class="fa fa-sun-o"></i>
+                        <i class="fa fa-arrows-alt"></i>
+                    </div>
+                    <div class="avatar">
+                        <img src="http://sly9bn5nh.hn-bkt.clouddn.com/gvb/20241026194124_QQ%E5%9B%BE%E7%89%8720240604160049.jpg"
+                             alt="">
+                    </div>
+                    <div class="drop_menu">
+                        <a-dropdown>
+                            <a class="ant-dropdown-link" @click.prevent>
+                                18sui
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <template #overlay>
+                                <a-menu>
+                                    <a-menu-item>
+                                        <a href="javascript:;">个人中心</a>
+                                    </a-menu-item>
+                                    <a-menu-item>
+                                        <a href="javascript:;">我的消息</a>
+                                    </a-menu-item>
+                                    <a-menu-item>
+                                        <a href="javascript:;">文章列表</a>
+                                    </a-menu-item>
+                                    <a-menu-item>
+                                        <a href="javascript:;">注销退出</a>
+                                    </a-menu-item>
+                                </a-menu>
+                            </template>
+                        </a-dropdown>
+                    </div>
+                </div>
+            </header>
             <div class="tabs"></div>
             <main></main>
         </div>
@@ -33,6 +74,42 @@
     header {
       height: 60px;
       background-color: white;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .right {
+        display: flex;
+        align-items: center;
+      }
+
+      .icon_actions {
+        margin-right: 20px;
+
+        i {
+          margin-left: 10px;
+          cursor: pointer;
+          font-size: 16px;
+          color: var(--text);
+        }
+
+        i:hover {
+          color: var(--active);
+        }
+      }
+
+      .avatar {
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+
+      .drop_menu {
+        margin-left: 10px;
+      }
     }
 
     .tabs {
