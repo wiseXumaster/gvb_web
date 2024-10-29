@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ant-design-vue": "^4.2.5",
+    "ant-design-vue": "^3.2.20",
     "font-awesome": "^4.7.0",
     "pinia": "^2.2.4",
     "sass": "^1.80.4",

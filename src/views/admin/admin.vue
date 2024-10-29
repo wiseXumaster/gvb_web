@@ -1,6 +1,9 @@
 <template>
     <div class="gvb_admin">
         <aside>
+            <div>
+
+            </div>
         </aside>
         <div class="main">
             <header>
@@ -22,30 +25,52 @@
                         <img src="http://sly9bn5nh.hn-bkt.clouddn.com/gvb/20241026194124_QQ%E5%9B%BE%E7%89%8720240604160049.jpg"
                              alt="">
                     </div>
-                    <div class="drop_menu">
+                    <div>
                         <a-dropdown>
                             <a class="ant-dropdown-link" @click.prevent>
                                 18sui
                                 <i class="fa fa-angle-down"></i>
+<!--                                <DownOutlined />-->
                             </a>
                             <template #overlay>
-                                <a-menu @click="menuClick">
-                                    <a-menu-item key="user_center">
-                                        <a href="javascript:;">个人中心</a>
+                                <a-menu>
+                                    <a-menu-item>
+                                        <a href="javascript:;">1st menu item</a>
                                     </a-menu-item>
-                                    <a-menu-item key="my_messages">
-                                        <a href="javascript:;">我的消息</a>
+                                    <a-menu-item>
+                                        <a href="javascript:;">2nd menu item</a>
                                     </a-menu-item>
-                                    <a-menu-item key="article_list">
-                                        <a href="javascript:;">文章列表</a>
-                                    </a-menu-item>
-                                    <a-menu-item key="logout">
-                                        <a href="javascript:;">注销退出</a>
+                                    <a-menu-item>
+                                        <a href="javascript:;">3rd menu item</a>
                                     </a-menu-item>
                                 </a-menu>
                             </template>
                         </a-dropdown>
                     </div>
+<!--                    <div class="drop_menu">-->
+<!--                        <a-dropdown>-->
+<!--                            <a class="ant-dropdown-link" @click.prevent>-->
+<!--                                18sui-->
+<!--                                <i class="fa fa-angle-down"></i>-->
+<!--                            </a>-->
+<!--                            <template #overlay>-->
+<!--                                <a-menu @click="menuClick">-->
+<!--                                    <a-menu-item key="user_center">-->
+<!--                                        <a href="javascript:;">个人中心</a>-->
+<!--                                    </a-menu-item>-->
+<!--                                    <a-menu-item key="my_messages">-->
+<!--                                        <a href="javascript:;">我的消息</a>-->
+<!--                                    </a-menu-item>-->
+<!--                                    <a-menu-item key="article_list">-->
+<!--                                        <a href="javascript:;">文章列表</a>-->
+<!--                                    </a-menu-item>-->
+<!--                                    <a-menu-item key="logout">-->
+<!--                                        <a href="javascript:;">注销退出</a>-->
+<!--                                    </a-menu-item>-->
+<!--                                </a-menu>-->
+<!--                            </template>-->
+<!--                        </a-dropdown>-->
+<!--                    </div>-->
                 </div>
             </header>
             <div class="tabs"></div>
@@ -57,9 +82,11 @@
 <script setup>
 import {useRouter} from "vue-router"
 import {ref} from "vue";
-const router =useRouter()
-function menuClick({key}){
-    if(key==="logout"){
+
+const router = useRouter()
+
+function menuClick({key}) {
+    if (key === "logout") {
         console.log("logout")
         return
     }
@@ -68,14 +95,14 @@ function menuClick({key}){
     })
 }
 
-const theme=ref(true)// true代表日常模式,false代表夜间模式
-function setTheme(){
+const theme = ref(true)// true代表日常模式,false代表夜间模式
+function setTheme() {
     // console.log(theme)
-    theme.value=!theme.value
-    if(theme.value){
+    theme.value = !theme.value
+    if (theme.value) {
         //日常模式
         document.documentElement.classList.remove("dark")
-    }else{
+    } else {
         //夜间模式
         document.documentElement.classList.add("dark")
 
