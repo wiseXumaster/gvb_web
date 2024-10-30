@@ -1,20 +1,20 @@
 <template>
-    <div class="admin-container">
+    <div class="admin">
         <AdminAside/>
-        <div class="right">
-            <header class="header">
-                <div class="breadcrumb">
+        <div class="admin-right">
+            <header class="admin-header">
+                <div class="admin-breadcrumb">
                     <a-breadcrumb>
                         <a-breadcrumb-item>首页</a-breadcrumb-item>
                         <a-breadcrumb-item><a href="#">个人中心</a></a-breadcrumb-item>
                         <a-breadcrumb-item>用户列表</a-breadcrumb-item>
                     </a-breadcrumb>
                 </div>
-                <div class="header-right">
+                <div class="admin-header-right">
                     <div class="icon-actions">
                         <i class="fa fa-home"></i>
                         <i :class="theme ? 'fa fa-sun-o' : 'fa fa-moon-o'" @click="toggleTheme"></i>
-                        <i class="fa fa-arrows-alt"></i>
+                        <i class="fa fa-arrows-alt" @click="toggleFullScreen"></i>
                     </div>
                     <div class="avatar">
                         <img src="https://sly9bn5nh.hn-bkt.clouddn.com/gvb/20241026194124_QQ%E5%9B%BE%E7%89%8720240604160049.jpg"/>
@@ -37,10 +37,10 @@
                     </div>
                 </div>
             </header>
-            <div class="tabs">
+            <div class="admin-tabs">
                 <!-- 标签页内容 -->
             </div>
-            <main class="main-content">
+            <main class="admin-main-content">
                 <!-- 主内容 -->
             </main>
         </div>
@@ -63,4 +63,104 @@ function menuClick({ key }) {
     }
     router.push({ name: key });
 }
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+        document.exitFullscreen();
+    }
+}
 </script>
+
+<style scoped>
+.admin {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.admin-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header 样式 */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: var(--header-bg-color);
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 面包屑样式 */
+.admin-breadcrumb a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.admin-breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.admin-breadcrumb .ant-breadcrumb .ant-breadcrumb-item,
+.admin-breadcrumb .ant-breadcrumb .ant-breadcrumb-separator {
+    color: var(--text-color);
+}
+
+/* Header右侧的图标和头像样式 */
+.admin-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-actions {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icon-actions i {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.icon-actions i:hover {
+    color: var(--primary-color);
+}
+
+.avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.drop-menu {
+    margin-left: 10px;
+}
+
+/* 标签页样式 */
+.admin-tabs {
+    height: 30px;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 主内容区域样式 */
+.admin-main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+</style>
