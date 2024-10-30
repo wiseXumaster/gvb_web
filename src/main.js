@@ -8,7 +8,6 @@ import Antd from 'ant-design-vue'
 import "./assets/css/iconfont.css"
 import "font-awesome/css/font-awesome.min.css"
 import "ant-design-vue/dist/antd.min.css"
-import "./assets/css/admin-theme.css"
 import axios from 'axios';
 // 引入主题 store 用于主题持久化
 import { useThemeStore } from './stores/stores'

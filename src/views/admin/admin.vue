@@ -52,6 +52,7 @@
 import { useRouter } from 'vue-router';
 import { useThemeStore } from '@/stores/stores'; // 引入主题 store
 import AdminAside from '@/components/admin/admin-aside.vue' // 引入侧边栏组件
+import '@/assets/css/admin-theme.css';  // 引入整合后的样式文件
 const router = useRouter();
 const themeStore = useThemeStore(); // 获取主题 store
 
@@ -74,94 +75,94 @@ function toggleFullScreen() {
 }
 </script>
 
-<style scoped>
-.admin {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
+<!--<style scoped>-->
+<!--.admin {-->
+<!--    display: flex;-->
+<!--    width: 100%;-->
+<!--    height: 100vh;-->
+<!--}-->
 
-.admin-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
+<!--.admin-right {-->
+<!--    flex: 1;-->
+<!--    display: flex;-->
+<!--    flex-direction: column;-->
+<!--    background-color: var(&#45;&#45;bg-color);-->
+<!--    color: var(&#45;&#45;text-color);-->
+<!--}-->
 
-/* Header 样式 */
-.admin-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    background-color: var(--header-bg-color);
-    padding: 0 20px;
-    border-bottom: 1px solid var(--border-color);
-}
+<!--/* Header 样式 */-->
+<!--.admin-header {-->
+<!--    display: flex;-->
+<!--    justify-content: space-between;-->
+<!--    align-items: center;-->
+<!--    height: 60px;-->
+<!--    background-color: var(&#45;&#45;header-bg-color);-->
+<!--    padding: 0 20px;-->
+<!--    border-bottom: 1px solid var(&#45;&#45;border-color);-->
+<!--}-->
 
-/* 面包屑样式 */
-.admin-breadcrumb a {
-    color: var(--text-color);
-    text-decoration: none;
-}
+<!--/* 面包屑样式 */-->
+<!--.admin-breadcrumb a {-->
+<!--    color: var(&#45;&#45;text-color);-->
+<!--    text-decoration: none;-->
+<!--}-->
 
-.admin-breadcrumb a:hover {
-    color: var(--primary-color);
-}
+<!--.admin-breadcrumb a:hover {-->
+<!--    color: var(&#45;&#45;primary-color);-->
+<!--}-->
 
-.admin-breadcrumb .ant-breadcrumb .ant-breadcrumb-item,
-.admin-breadcrumb .ant-breadcrumb .ant-breadcrumb-separator {
-    color: var(--text-color);
-}
+<!--.admin-breadcrumb .ant-breadcrumb .ant-breadcrumb-item,-->
+<!--.admin-breadcrumb .ant-breadcrumb .ant-breadcrumb-separator {-->
+<!--    color: var(&#45;&#45;text-color);-->
+<!--}-->
 
-/* Header右侧的图标和头像样式 */
-.admin-header-right {
-    display: flex;
-    align-items: center;
-}
+<!--/* Header右侧的图标和头像样式 */-->
+<!--.admin-header-right {-->
+<!--    display: flex;-->
+<!--    align-items: center;-->
+<!--}-->
 
-.icon-actions {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
+<!--.icon-actions {-->
+<!--    display: flex;-->
+<!--    align-items: center;-->
+<!--    margin-right: 20px;-->
+<!--}-->
 
-.icon-actions i {
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-}
+<!--.icon-actions i {-->
+<!--    margin-left: 10px;-->
+<!--    cursor: pointer;-->
+<!--    font-size: 16px;-->
+<!--    color: var(&#45;&#45;text-color);-->
+<!--    transition: color 0.3s ease;-->
+<!--}-->
 
-.icon-actions i:hover {
-    color: var(--primary-color);
-}
+<!--.icon-actions i:hover {-->
+<!--    color: var(&#45;&#45;primary-color);-->
+<!--}-->
 
-.avatar img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
+<!--.avatar img {-->
+<!--    width: 40px;-->
+<!--    height: 40px;-->
+<!--    border-radius: 50%;-->
+<!--}-->
 
-.drop-menu {
-    margin-left: 10px;
-}
+<!--.drop-menu {-->
+<!--    margin-left: 10px;-->
+<!--}-->
 
-/* 标签页样式 */
-.admin-tabs {
-    height: 30px;
-    background-color: var(--bg-color);
-    border-bottom: 1px solid var(--border-color);
-}
+<!--/* 标签页样式 */-->
+<!--.admin-tabs {-->
+<!--    height: 30px;-->
+<!--    background-color: var(&#45;&#45;bg-color);-->
+<!--    border-bottom: 1px solid var(&#45;&#45;border-color);-->
+<!--}-->
 
-/* 主内容区域样式 */
-.admin-main-content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-</style>
+<!--/* 主内容区域样式 */-->
+<!--.admin-main-content {-->
+<!--    flex: 1;-->
+<!--    padding: 20px;-->
+<!--    overflow-y: auto;-->
+<!--    background-color: var(&#45;&#45;bg-color);-->
+<!--    color: var(&#45;&#45;text-color);-->
+<!--}-->
+<!--</style>-->
