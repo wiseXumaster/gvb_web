@@ -55,6 +55,11 @@ html, body {
     border-right: 1px solid var(--border-color); /* 分隔线 */
 }
 
+.admin-aside-body {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
 .admin-aside ul {
     list-style: none;
     padding: 0;
