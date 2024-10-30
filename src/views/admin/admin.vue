@@ -15,7 +15,7 @@
                 <div class="header-right">
                     <div class="icon-actions">
                         <i class="fa fa-home"></i>
-                        <i :class="theme ? 'fa fa-sun-o' : 'fa fa-moon-o'" @click="setTheme"></i>
+                        <i :class="theme ? 'fa fa-sun-o' : 'fa fa-moon-o'" @click="toggleTheme"></i>
                         <i class="fa fa-arrows-alt"></i>
                     </div>
                     <div class="avatar">
@@ -48,21 +48,15 @@
         </div>
     </div>
 </template>
+
 <script setup>
-import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useThemeStore } from '@/stores/stores'; // 引入主题 store
 
 const router = useRouter();
-const theme = ref(true); // true 为日间模式，false 为夜间模式
+const themeStore = useThemeStore(); // 获取主题 store
 
-function setTheme() {
-    theme.value = !theme.value;
-    if (theme.value) {
-        document.documentElement.classList.remove('dark');
-    } else {
-        document.documentElement.classList.add('dark');
-    }
-}
+const { theme, toggleTheme } = themeStore; // 解构主题状态和切换函数
 
 function menuClick({ key }) {
     if (key === 'logout') {
