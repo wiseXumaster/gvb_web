@@ -9,7 +9,7 @@ import "./assets/css/iconfont.css"
 import "font-awesome/css/font-awesome.min.css"
 import "ant-design-vue/dist/antd.min.css"
 import "./assets/css/admin-theme.css"
-
+import axios from 'axios';
 // 引入主题 store 用于主题持久化
 import { useThemeStore } from './stores/stores'
 
@@ -23,6 +23,8 @@ app.use(pinia)
 // 获取主题 store 并根据状态应用主题
 const themeStore = useThemeStore()
 document.documentElement.classList.toggle('dark', !themeStore.theme)
+
+app.config.globalProperties.$axios = axios;
 
 // 注册路由和 Ant Design 组件
 app.use(router)

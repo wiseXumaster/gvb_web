@@ -7,6 +7,7 @@
                     <a-breadcrumb>
                         <a-breadcrumb-item>首页</a-breadcrumb-item>
                         <a-breadcrumb-item><a href="#">个人中心</a></a-breadcrumb-item>
+                        <a-breadcrumb-item><a href="#">个人中心</a></a-breadcrumb-item>
                         <a-breadcrumb-item>用户列表</a-breadcrumb-item>
                     </a-breadcrumb>
                 </div>
