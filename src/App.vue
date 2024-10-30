@@ -9,8 +9,4 @@
   box-sizing: border-box;
 }
 
-:root {
-  --active: #2184fc;
-  --text: #555
-}
 </style>

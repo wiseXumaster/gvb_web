@@ -1,0 +1,148 @@
+/* admin-theme.css */
+
+/* 日间模式变量 */
+:root {
+    --bg-color: #ffffff;             /* 主背景颜色 */
+    --header-bg-color: #ffffff;      /* 头部背景颜色 */
+    --text-color: #333333;           /* 文字颜色 */
+    --primary-color: #007acc;        /* 主色调 */
+    --sidebar-bg-color: #F9F9F9;     /* 侧边栏背景颜色 */
+    --border-color: #dcdcdc;         /* 边框颜色 */
+}
+
+/* 夜间模式变量 */
+html.dark {
+    --bg-color: #333333;             /* 将右侧主内容背景颜色设置为 #333333 */
+    --header-bg-color: #333333;      /* 头部背景颜色 */
+    --text-color: #e0e0e0;           /* 文字颜色 */
+    --primary-color: #4a90e2;        /* 主色调 */
+    --sidebar-bg-color: #1f1f1f;     /* 侧边栏背景颜色保持深色 */
+    --border-color: #3b3b3b;         /* 边框颜色 */
+}
+
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全局字体样式 */
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5715;
+}
+
+/* 布局样式 */
+.admin-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* 左侧侧边栏 */
+.admin-container .left {
+    width: 240px;
+    background-color: var(--sidebar-bg-color);
+    color: var(--text-color);
+    overflow-y: auto;
+    height: 100%;
+    border-right: 1px solid var(--border-color); /* 添加右边框分隔线 */
+}
+
+/* 右侧主要内容 */
+.admin-container .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100%;
+}
+
+/* 头部样式 */
+.admin-container .right .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: var(--header-bg-color);
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 面包屑样式 */
+.admin-container .right .header .breadcrumb {
+    flex: 1;
+}
+
+.admin-container .right .header .breadcrumb .ant-breadcrumb {
+    color: var(--text-color);
+}
+
+.admin-container .right .header .breadcrumb .ant-breadcrumb a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.admin-container .right .header .breadcrumb .ant-breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.admin-container .right .header .breadcrumb .ant-breadcrumb .ant-breadcrumb-link,
+.admin-container .right .header .breadcrumb .ant-breadcrumb .ant-breadcrumb-separator,
+.admin-container .right .header .breadcrumb .ant-breadcrumb .ant-breadcrumb-item {
+    color: var(--text-color);
+}
+
+/* 头部右侧样式 */
+.admin-container .right .header .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.admin-container .right .header .header-right .icon-actions {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.admin-container .right .header .header-right .icon-actions i {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.admin-container .right .header .header-right .icon-actions i:hover {
+    color: var(--primary-color);
+}
+
+.admin-container .right .header .header-right .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.admin-container .right .header .header-right .drop-menu {
+    margin-left: 10px;
+}
+
+/* 标签页样式 */
+.admin-container .right .tabs {
+    height: 30px;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 主内容区域 */
+.admin-container .right .main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
