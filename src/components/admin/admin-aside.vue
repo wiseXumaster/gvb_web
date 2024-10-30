@@ -109,7 +109,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid var(--sidebar-border-color);
+    /*border-bottom: 1px solid var(--sidebar-border-color);*/
 }
 
 .admin-aside-logo img {
@@ -165,86 +165,3 @@ export default defineComponent({
     color: var(--primary-color);
 }
 </style>
-<!--<style scoped>-->
-<!--.admin-aside {-->
-<!--    width: 240px;-->
-<!--    background-color: var(&#45;&#45;sidebar-bg-color);-->
-<!--    color: var(&#45;&#45;sidebar-text-color);-->
-<!--    height: 100%;-->
-<!--    overflow-y: auto;-->
-<!--    padding: 10px 0;-->
-<!--    box-sizing: border-box;-->
-<!--    border-right: 1px solid var(&#45;&#45;sidebar-border-color);-->
-<!--}-->
-
-<!--/* 标题和 logo 样式 */-->
-<!--.admin-aside-header {-->
-<!--    padding: 20px;-->
-<!--    display: flex;-->
-<!--    align-items: center;-->
-<!--    justify-content: center;-->
-<!--    border-bottom: 1px solid var(&#45;&#45;sidebar-border-color);-->
-<!--    margin-bottom: -1px; /* 确保侧边栏顶部和右侧内容区域对齐 */-->
-<!--}-->
-
-<!--.admin-aside-logo img {-->
-<!--    width: 40px;-->
-<!--    height: 40px;-->
-<!--    border-radius: 50%;-->
-<!--    margin-right: 10px;-->
-<!--}-->
-
-<!--.admin-aside-title {-->
-<!--    font-size: 1.2em;-->
-<!--    font-weight: bold;-->
-<!--    color: var(&#45;&#45;sidebar-text-color);-->
-<!--}-->
-
-<!--/* 菜单样式 */-->
-<!--.admin-aside-body .ant-menu {-->
-<!--    background-color: var(&#45;&#45;sidebar-bg-color);-->
-<!--    border-right: none;-->
-<!--}-->
-
-<!--/* 菜单项样式 */-->
-<!--.admin-aside-body .ant-menu-item,-->
-<!--.admin-aside-body .ant-menu-submenu-title {-->
-<!--    color: var(&#45;&#45;sidebar-text-color);-->
-<!--    padding-left: 24px;-->
-<!--    font-size: 14px;-->
-<!--}-->
-
-<!--/* 没有子菜单的选中项样式 */-->
-<!--.admin-aside-body .ant-menu-item-selected {-->
-<!--    background-color: var(&#45;&#45;primary-color) !important;-->
-<!--    color: #ffffff !important; /* 确保选中项的文字清晰 */-->
-<!--    font-weight: 600; /* 加粗字体 */-->
-<!--    border-radius: 4px; /* 圆角效果 */-->
-<!--}-->
-
-<!--/* 子菜单项样式 */-->
-<!--.admin-aside-body .ant-menu-submenu .ant-menu-item {-->
-<!--    background-color: var(&#45;&#45;sidebar-bg-color);-->
-<!--    color: var(&#45;&#45;sidebar-text-color);-->
-<!--    padding-left: 40px;-->
-<!--}-->
-
-<!--/* 子菜单选中项样式 */-->
-<!--.admin-aside-body .ant-menu-submenu .ant-menu-item-selected {-->
-<!--    background-color: var(&#45;&#45;primary-color) !important;-->
-<!--    color: #ffffff !important;-->
-<!--    font-weight: 600;-->
-<!--}-->
-
-<!--/* 悬停效果 */-->
-<!--.admin-aside-body .ant-menu-item:hover,-->
-<!--.admin-aside-body .ant-menu-submenu-title:hover {-->
-<!--    color: var(&#45;&#45;primary-color);-->
-<!--}-->
-
-<!--/* 子菜单悬停效果 */-->
-<!--.admin-aside-body .ant-menu-submenu .ant-menu-item:hover {-->
-<!--    background-color: var(&#45;&#45;submenu-bg-color);-->
-<!--    color: var(&#45;&#45;primary-color);-->
-<!--}-->
-<!--</style>-->
