@@ -71,24 +71,24 @@ export default defineComponent({
             theme,
         };
     },
-    methods: {
-        // 发送请求的函数
-        async fetchData(key) {
-            const urlMap = {
-                menu_list: 'http://localhost:8080/api/menus',
-                image_list: 'http://localhost:8080/api/images',
-                advert_list: 'http://localhost:8080/api/adverts',
-            };
-            const url = urlMap[key];
-
-            try {
-                const response = await this.$axios.get(url);
-                console.log(`${key} 数据:`, response.data);
-            } catch (error) {
-                console.error('请求失败:', error);
-            }
-        },
-    },
+    // methods: {
+    //     // 发送请求的函数
+    //     async fetchData(key) {
+    //         const urlMap = {
+    //             menu_list: 'http://localhost:8080/api/menus',
+    //             image_list: 'http://localhost:8080/api/images',
+    //             advert_list: 'http://localhost:8080/api/adverts',
+    //         };
+    //         const url = urlMap[key];
+    //
+    //         try {
+    //             const response = await this.$axios.get(url);
+    //             console.log(`${key} 数据:`, response.data);
+    //         } catch (error) {
+    //             console.error('请求失败:', error);
+    //         }
+    //     },
+    // },
 });
 </script>
 <style scoped>
