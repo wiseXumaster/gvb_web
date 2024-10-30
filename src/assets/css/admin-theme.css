@@ -12,11 +12,11 @@
 
 /* 夜间模式变量 */
 html.dark {
-    --bg-color: #333333;             /* 将右侧主内容背景颜色设置为 #333333 */
+    --bg-color: #333333;             /* 右侧主内容背景颜色 */
     --header-bg-color: #333333;      /* 头部背景颜色 */
     --text-color: #e0e0e0;           /* 文字颜色 */
     --primary-color: #4a90e2;        /* 主色调 */
-    --sidebar-bg-color: #1f1f1f;     /* 侧边栏背景颜色保持深色 */
+    --sidebar-bg-color: #1f1f1f;     /* 侧边栏背景颜色 */
     --border-color: #3b3b3b;         /* 边框颜色 */
 }
 
@@ -43,14 +43,34 @@ html, body {
     height: 100vh;
 }
 
-/* 左侧侧边栏 */
-.admin-container .left {
+/* AdminAside 样式 */
+.admin-aside {
     width: 240px;
     background-color: var(--sidebar-bg-color);
     color: var(--text-color);
-    overflow-y: auto;
     height: 100%;
-    border-right: 1px solid var(--border-color); /* 添加右边框分隔线 */
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid var(--border-color); /* 分隔线 */
+}
+
+.admin-aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-aside li {
+    margin: 15px 0;
+}
+
+.admin-aside a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.admin-aside a:hover {
+    color: var(--primary-color);
 }
 
 /* 右侧主要内容 */
@@ -145,4 +165,9 @@ html, body {
     overflow-y: auto;
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+
+/* 过渡效果 */
+html, body, .admin-container, .admin-aside, .admin-container .right {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }

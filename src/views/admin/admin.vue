@@ -1,8 +1,6 @@
 <template>
     <div class="admin-container">
-        <div class="left">
-            <!-- 左侧侧边栏内容 -->
-        </div>
+        <AdminAside/>
         <div class="right">
             <header class="header">
                 <div class="breadcrumb">
@@ -19,7 +17,7 @@
                         <i class="fa fa-arrows-alt"></i>
                     </div>
                     <div class="avatar">
-                        <img src="http://sly9bn5nh.hn-bkt.clouddn.com/gvb/20241026194124_QQ%E5%9B%BE%E7%89%8720240604160049.jpg" alt="Avatar" />
+                        <img src="https://sly9bn5nh.hn-bkt.clouddn.com/gvb/20241026194124_QQ%E5%9B%BE%E7%89%8720240604160049.jpg"/>
                     </div>
                     <div class="drop-menu">
                         <a-dropdown>
@@ -27,7 +25,7 @@
                                 wiseXuMaster
                                 <i class="fa fa-angle-down"></i>
                             </a>
-                            <template #overlay>
+                            <template>
                                 <a-menu @click="menuClick">
                                     <a-menu-item key="user_center">个人中心</a-menu-item>
                                     <a-menu-item key="my_messages">我的消息</a-menu-item>
@@ -52,7 +50,7 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { useThemeStore } from '@/stores/stores'; // 引入主题 store
-
+import AdminAside from '@/components/admin/admin-aside.vue' // 引入侧边栏组件
 const router = useRouter();
 const themeStore = useThemeStore(); // 获取主题 store
 
