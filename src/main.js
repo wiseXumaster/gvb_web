@@ -22,7 +22,9 @@ app.use(pinia)
 // 获取主题 store 并根据状态应用主题
 const themeStore = useThemeStore()
 document.documentElement.classList.toggle('dark', !themeStore.theme)
-
+// 设置 Axios 的基础 URL
+// 设置 Axios 的基础 URL
+axios.defaults.baseURL = 'https://www.hbbxht.top/api'; // 替换为您的实际域名
 app.config.globalProperties.$axios = axios;
 
 // 注册路由和 Ant Design 组件

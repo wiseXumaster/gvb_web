@@ -61,7 +61,7 @@ export default defineComponent({
         // 发送请求的函数
         async fetchData(key) {
             const urlMap = {
-                image_list: 'http://localhost:8080/api/images',
+                image_list: '/images',
             };
             const url = urlMap[key];
 
