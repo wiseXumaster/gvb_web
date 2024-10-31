@@ -2,7 +2,7 @@
     <div class="visitor-aside">
         <div class="visitor-aside-header">
             <div class="visitor-aside-logo">
-                <img src="https://sly9bn5nh.hn-bkt.clouddn.com/gvb/20241030211926_dog.jpg" alt="Logo">
+                <img src="http://sly9bn5nh.hn-bkt.clouddn.com/gvb/20241031101830_dog.jpg" alt="Logo">
             </div>
             <div class="visitor-aside-title">
                 WiseXplore
