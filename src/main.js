@@ -8,6 +8,8 @@ import Antd from 'ant-design-vue'
 import "./assets/css/iconfont.css"
 import "font-awesome/css/font-awesome.min.css"
 import "ant-design-vue/dist/antd.min.css"
+// import '@/assets/css/visitor-theme.css'; // 引入全局样式
+// import '@/assets/css/admin-theme.css'; // 引入全局样式
 import axios from 'axios';
 // 引入主题 store 用于主题持久化
 import { useThemeStore } from './stores/stores'
@@ -23,7 +25,8 @@ app.use(pinia)
 const themeStore = useThemeStore()
 document.documentElement.classList.toggle('dark', !themeStore.theme)
 // 设置 Axios 的基础 URL
-axios.defaults.baseURL = 'http://www.hbbxht.top/api'; // 替换为您的实际域名
+// axios.defaults.baseURL = 'http://www.hbbxht.top/api'; // 替换为您的实际域名
+axios.defaults.baseURL = 'http://localhost:8080/api'; // 替换为您的实际域名
 app.config.globalProperties.$axios = axios;
 
 // 注册路由和 Ant Design 组件

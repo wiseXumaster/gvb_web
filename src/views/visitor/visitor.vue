@@ -1,62 +1,77 @@
 <template>
-    <div class="visitor">
-        <VisitorAside @dataFetched="handleData"/>
+    <div :class="['visitor', isDarkTheme ? 'dark' : 'light']">
+        <!-- 侧边栏 -->
+        <VisitorAside @dataFetched="handleData" @menuClick="handleMenuClick" />
+
         <div class="visitor-right">
-            <main class="visitor-main-content">
-                <div class="image-gallery">
-                    <a-card v-for="(image, index) in images" :key="index" hoverable class="gallery-card">
-                        <template #cover>
-                            <div class="card-image-container">
-                                <img :src="image.url" :alt="image.name" class="card-image" @error="onImageError(index)">
-                            </div>
-                        </template>
-                    </a-card>
-                </div>
-            </main>
+            <!-- 主内容区域 -->
+            <VisitorMainContent
+                :contentType="contentType"
+                :contentData="selectedContent"
+                @imageError="onImageError"
+            />
         </div>
     </div>
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
-import { useThemeStore } from '@/stores/stores';
-import VisitorAside from '@/components/visitor/visitor-aside.vue';
+import { ref, watchEffect } from "vue";
+import VisitorAside from '@/components/visitor/VisitorAside.vue';
+import VisitorMainContent from '@/components/visitor/VisitorMainContent.vue';
 import '@/assets/css/visitor-theme.css';
-import { ref } from "vue";
 
-const router = useRouter();
-const themeStore = useThemeStore();
-const { theme, toggleTheme } = themeStore;
+// 数据存储
 const images = ref([]);
-const visible = ref(false);
+const articles = ref([]);
+const selectedContent = ref([]);
+const contentType = ref("gallery"); // 默认内容类型
 
+// 主题监控
+const isDarkTheme = ref(false);
+watchEffect(() => {
+    isDarkTheme.value = document.documentElement.classList.contains('dark');
+});
+
+// 图片加载错误处理
 function onImageError(index) {
-    console.warn(`Image at index ${index} failed to load:`, images.value[index].url);
-    images.value[index].url = 'path/to/default-image.jpg';
+    console.warn(`Image at index ${index} failed to load:`, selectedContent.value[index]?.url);
+    selectedContent.value[index].url = 'path/to/default-image.jpg';
 }
 
-const handleData = (fetchedData) => {
-    console.log(fetchedData);
+// 处理从侧边栏接收到的数据
+function handleData(fetchedData) {
+    console.log("Fetched data structure:", fetchedData);
+
     if (fetchedData && fetchedData.data && Array.isArray(fetchedData.data.list)) {
-        images.value = fetchedData.data.list.map(item => {
-            return { url: item.path, name: item.name, type: item.image_type };
-        });
+        console.log("Data list:", fetchedData.data.list); // 打印 data.list 以确认格式
+        selectedContent.value = fetchedData.data.list.map(item => ({
+            url: item.path,
+            name: item.name,
+            type: item.image_type || 'gallery'
+        }));
+    } else {
+        selectedContent.value = [];
     }
-};
 
-function menuClick({ key }) {
-    if (key === 'logout') {
-        console.log('logout');
-        return;
-    }
-    router.push({ name: key });
+    console.log("Updated selectedContent:", selectedContent.value);
 }
 
-function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-    } else if (document.exitFullscreen) {
-        document.exitFullscreen();
+// 处理菜单点击事件
+function handleMenuClick(key) {
+    contentType.value = key;
+
+    // 根据内容类型设置 selectedContent 直接指向 images 或 articles 的引用
+    if (key === 'gallery') {
+        selectedContent.value = images.value;
+    } else if (key === 'articles') {
+        selectedContent.value = articles.value;
     }
+    console.log("Content type switched to:", contentType.value);
+    console.log("Current selectedContent:", selectedContent.value);
 }
+
 </script>
+
+<style scoped>
+/* 你可以在这里添加一些样式 */
+</style>
